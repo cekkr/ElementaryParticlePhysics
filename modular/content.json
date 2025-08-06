@@ -1,0 +1,134 @@
+{
+  "particleData": {
+    "up": { "name": "Up Quark", "symbol": "u", "group": "quark", "mass": "2.2 MeV/c²", "charge": "+2/3", "spin": "1/2", "discovered": "1968", "info": "Lightest quark, found in protons and neutrons" },
+    "down": { "name": "Down Quark", "symbol": "d", "group": "quark", "mass": "4.7 MeV/c²", "charge": "-1/3", "spin": "1/2", "discovered": "1968", "info": "Second lightest quark, essential for nuclear stability" },
+    "charm": { "name": "Charm Quark", "symbol": "c", "group": "quark", "mass": "1.28 GeV/c²", "charge": "+2/3", "spin": "1/2", "discovered": "1974", "info": "Second generation quark, found in J/ψ meson" },
+    "strange": { "name": "Strange Quark", "symbol": "s", "group": "quark", "mass": "95 MeV/c²", "charge": "-1/3", "spin": "1/2", "discovered": "1964", "info": "Creates 'strange' particles in cosmic rays" },
+    "top": { "name": "Top Quark", "symbol": "t", "group": "quark", "mass": "173 GeV/c²", "charge": "+2/3", "spin": "1/2", "discovered": "1995", "info": "Heaviest elementary particle, as heavy as a gold atom!" },
+    "bottom": { "name": "Bottom Quark", "symbol": "b", "group": "quark", "mass": "4.18 GeV/c²", "charge": "-1/3", "spin": "1/2", "discovered": "1977", "info": "Also called 'beauty', important for CP violation studies" },
+    "electron": { "name": "Electron", "symbol": "e⁻", "group": "lepton", "mass": "0.511 MeV/c²", "charge": "-1", "spin": "1/2", "discovered": "1897", "info": "First elementary particle discovered, makes chemistry possible" },
+    "muon": { "name": "Muon", "symbol": "μ⁻", "group": "lepton", "mass": "105.7 MeV/c²", "charge": "-1", "spin": "1/2", "discovered": "1936", "info": "Heavy electron, penetrates matter deeply" },
+    "tau": { "name": "Tau", "symbol": "τ⁻", "group": "lepton", "mass": "1.777 GeV/c²", "charge": "-1", "spin": "1/2", "discovered": "1975", "info": "Heaviest lepton, decays in 10⁻¹³ seconds" },
+    "e_neutrino": { "name": "Electron Neutrino", "symbol": "νₑ", "group": "lepton", "mass": "< 2 eV/c²", "charge": "0", "spin": "1/2", "discovered": "1956", "info": "Ghostly particle that barely interacts" },
+    "mu_neutrino": { "name": "Muon Neutrino", "symbol": "νᵤ", "group": "lepton", "mass": "< 0.19 MeV/c²", "charge": "0", "spin": "1/2", "discovered": "1962", "info": "Second neutrino flavor discovered" },
+    "tau_neutrino": { "name": "Tau Neutrino", "symbol": "νᵧ", "group": "lepton", "mass": "< 18.2 MeV/c²", "charge": "0", "spin": "1/2", "discovered": "2000", "info": "Last Standard Model particle to be directly observed" },
+    "photon": { "name": "Photon", "symbol": "γ", "group": "boson", "mass": "0", "charge": "0", "spin": "1", "discovered": "1905", "info": "Quantum of light, mediates electromagnetic force" },
+    "w_boson": { "name": "W Boson", "symbol": "W±", "group": "boson", "mass": "80.4 GeV/c²", "charge": "±1", "spin": "1", "discovered": "1983", "info": "Mediates weak force, causes beta decay" },
+    "z_boson": { "name": "Z Boson", "symbol": "Z⁰", "group": "boson", "mass": "91.2 GeV/c²", "charge": "0", "spin": "1", "discovered": "1983", "info": "Neutral weak force carrier" },
+    "gluon": { "name": "Gluon", "symbol": "g", "group": "boson", "mass": "0", "charge": "0 (color)", "spin": "1", "discovered": "1979", "info": "Carries strong force, self-interacting!" },
+    "higgs": { "name": "Higgs Boson", "symbol": "H", "group": "boson", "mass": "125 GeV/c²", "charge": "0", "spin": "0", "discovered": "2012", "info": "Gives mass to other particles, Nobel Prize 2013" }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "nav_title": "Introduction",
+      "type": "hero",
+      "title": "<i class='fas fa-atom'></i> Elementary Particle Physics",
+      "subtitle": "A Journey from the Universe to Its Smallest Building Blocks",
+      "demo_text": "Welcome to an interactive exploration of the fundamental nature of reality.<br>Scroll down to begin your journey through scales, particles, and forces."
+    },
+    {
+      "id": "scale",
+      "nav_title": "Scale of Universe",
+      "number": "1",
+      "title": "The Universe at Different Scales",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "From Cosmos to Quarks: A Journey of Scale",
+          "content": ["The universe spans an incredible range of scales. From the observable universe at 10²⁶ meters to the smallest meaningful length (Planck length) at 10⁻³⁵ meters, we traverse 61 orders of magnitude!"],
+          "has_canvas": true,
+          "canvas_id": "scaleVisualization",
+          "expandable": {
+            "button_text": "Explore Scale Details",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Deeper Understanding" },
+              { "type": "paragraph", "text": "Each step down in scale reveals new physics:" },
+              { "type": "list", "items": [
+                  "<strong>10⁰ m (Human scale):</strong> Classical mechanics dominates",
+                  "<strong>10⁻⁹ m (Nanoscale):</strong> Quantum effects become noticeable",
+                  "<strong>10⁻¹⁰ m (Atomic):</strong> Electron orbitals, chemistry happens here",
+                  "<strong>10⁻¹⁵ m (Nuclear):</strong> Strong force dominates, quarks confined",
+                  "<strong>10⁻¹⁸ m (Deep inelastic):</strong> Quarks behave as free particles"
+              ]},
+              { "type": "equation-box", "content": [
+                  { "type": "depth-indicator", "depth": "advanced", "text": "Mathematical Framework" },
+                  { "type": "paragraph", "text": "The de Broglie wavelength sets the quantum scale:" },
+                  { "type": "equation", "text": "λ = h / p = h / (mv)"},
+                  { "type": "paragraph", "text": "When λ ≈ size of system, quantum mechanics is essential!" }
+              ]}
+            ]
+          }
+        },
+        {
+          "type": "mnemonic",
+          "title": "Memory Trick: Powers of Ten",
+          "content": [
+            "\"<strong>M</strong>ega <strong>K</strong>ittens <strong>H</strong>ave <strong>D</strong>ancing <strong>C</strong>ats, <strong>M</strong>iniature <strong>μ</strong>nicorns <strong>N</strong>ap <strong>P</strong>eacefully\"",
+            "Mega (10⁶), Kilo (10³), Hecto (10²), Deca (10¹), Centi (10⁻²), Milli (10⁻³), Micro (10⁻⁶), Nano (10⁻⁹), Pico (10⁻¹²)"
+            ]
+        }
+      ]
+    },
+    {
+        "id": "matter",
+        "nav_title": "What is Matter?",
+        "number": "2",
+        "title": "What is Matter?",
+        "cards": [
+            {
+                "type": "concept",
+                "title": "The Atomic Theory Evolution",
+                "content": [
+                    "For centuries, we believed atoms were indivisible - the word literally means \"uncuttable\" in Greek. But the discovery of radioactivity in 1896 changed everything!",
+                    "Today we know that atoms consist of:"
+                ],
+                "list_items": [
+                    "<strong>Nucleus:</strong> Protons and neutrons (made of quarks!)",
+                    "<strong>Electron cloud:</strong> Electrons in quantum orbitals",
+                    "<strong>Empty space:</strong> 99.9999999999996% of an atom is empty!"
+                ],
+                "has_canvas": true,
+                "canvas_id": "atomModel",
+                "expandable": {
+                    "button_text": "Historical Journey",
+                    "content": [
+                        { "type": "depth-indicator", "depth": "intermediate", "text": "Discovery Timeline" },
+                        { "type": "list", "items": [
+                            "<strong>1897:</strong> J.J. Thomson discovers the electron",
+                            "<strong>1911:</strong> Rutherford's gold foil experiment reveals the nucleus",
+                            "<strong>1932:</strong> Chadwick discovers the neutron",
+                            "<strong>1964:</strong> Gell-Mann and Zweig propose quarks",
+                            "<strong>1974:</strong> J/ψ particle confirms quark model",
+                            "<strong>2012:</strong> Higgs boson discovered at CERN"
+                        ]},
+                        { "type": "cern-reference", "title": "CERN Connection", "text": "The Large Hadron Collider recreates conditions from 10⁻¹² seconds after the Big Bang, when quarks roamed free before being confined into protons and neutrons!"}
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "particle-zoo",
+        "nav_title": "Particle Zoo",
+        "number": "3",
+        "title": "The Particle Zoo",
+        "cards": [
+            {
+                "type": "concept",
+                "title": "The Standard Model: Nature's LEGO Set",
+                "content": ["All matter and forces (except gravity) arise from just 17 fundamental particles. Think of them as nature's LEGO blocks!"],
+                "has_particle_grid": true
+            },
+            {
+              "type": "mnemonic",
+              "title": "Memory Trick: Particle Categories",
+              "content": [
+                "<strong>Fermions</strong> (matter particles): \"Frankly, Every Real Material Is Obviously Numerous\"",
+                "<strong>Bosons</strong> (force carriers): \"Big Objects Send Out Notifications\""
+                ]
+            }
+        ]
+    }
+  ]
+}
