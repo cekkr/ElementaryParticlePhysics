@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Through Elementary Particle Physics</title>
+    
+    <!-- External Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+    
+    <style>
+        /* ============================================
+           PART 1: CSS STYLES
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #ff006e;
+            --accent: #06ffa5;
+            --warning: #ffb700;
+            --dark-bg: #0a0e27;
+            --section-bg: #1a1f3a;
+            --card-bg: rgba(30, 40, 70, 0.8);
+            --text-primary: #e0e6ed;
+            --text-secondary: #8892b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--section-bg) 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 212, 255, 0.1);
+            z-index: 9999;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* Navigation Sidebar */
+        .nav-sidebar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(26, 31, 58, 0.9);
+            padding: 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.3);
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-dot:hover {
+            transform: scale(1.5);
+            background: var(--primary);
+        }
+
+        .nav-dot.active {
+            background: var(--primary);
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        .nav-tooltip {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--section-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-dot:hover .nav-tooltip {
+            opacity: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-right: 100px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Content Sections */
+        .content-section {
+            min-height: 100vh;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Concept Cards */
+        .concept-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Expandable Content */
+        .expandable {
+            margin-top: 1rem;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .expandable.expanded {
+            max-height: 3000px;
+            opacity: 1;
+        }
+
+        .expand-btn {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border: none;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .expand-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .expand-btn i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .expand-btn.expanded i {
+            transform: rotate(180deg);
+        }
+
+        /* Particle Grid */
+        .particle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .particle-tile {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(6, 255, 165, 0.1));
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .particle-tile:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .particle-symbol {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .particle-name {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .quark { background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(255, 0, 110, 0.2)); }
+        .lepton { background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), rgba(58, 134, 255, 0.2)); }
+        .boson { background: linear-gradient(135deg, rgba(6, 255, 165, 0.1), rgba(6, 255, 165, 0.2)); }
+
+        /* Interactive Demo */
+        .interactive-demo {
+            background: rgba(26, 31, 58, 0.6);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .demo-canvas {
+            width: 100%;
+            height: 400px;
+            background: rgba(10, 14, 39, 0.8);
+            border-radius: 15px;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        /* Equations */
+        .equation-box {
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(0, 212, 255, 0.1));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .equation {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        /* Mnemonic Box */
+        .mnemonic {
+            background: linear-gradient(135deg, rgba(255, 183, 0, 0.1), rgba(255, 0, 110, 0.1));
+            border: 2px dashed rgba(255, 183, 0, 0.5);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .mnemonic::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 2rem;
+            background: var(--section-bg);
+            padding: 0 10px;
+        }
+
+        /* CERN Box */
+        .cern-reference {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(255, 0, 110, 0.1));
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cern-reference::after {
+            content: 'CERN';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            opacity: 0.1;
+            color: var(--primary);
+        }
+
+        /* Depth Indicators */
+        .depth-indicator {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        .depth-basic { background: rgba(6, 255, 165, 0.2); color: var(--accent); }
+        .depth-intermediate { background: rgba(255, 183, 0, 0.2); color: var(--warning); }
+        .depth-advanced { background: rgba(255, 0, 110, 0.2); color: var(--secondary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-sidebar { display: none; }
+            .container { padding-right: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation Sidebar -->
+    <nav class="nav-sidebar">
+        <div class="nav-dot active" data-section="0">
+            <span class="nav-tooltip">Introduction</span>
+        </div>
+        <div class="nav-dot" data-section="1">
+            <span class="nav-tooltip">Scale of Universe</span>
+        </div>
+        <div class="nav-dot" data-section="2">
+            <span class="nav-tooltip">What is Matter?</span>
+        </div>
+        <div class="nav-dot" data-section="3">
+            <span class="nav-tooltip">Particle Zoo</span>
+        </div>
+        <div class="nav-dot" data-section="4">
+            <span class="nav-tooltip">Fermions</span>
+        </div>
+        <div class="nav-dot" data-section="5">
+            <span class="nav-tooltip">Forces & Bosons</span>
+        </div>
+        <div class="nav-dot" data-section="6">
+            <span class="nav-tooltip">Higgs Mechanism</span>
+        </div>
+        <div class="nav-dot" data-section="7">
+            <span class="nav-tooltip">Quantum Properties</span>
+        </div>
+        <div class="nav-dot" data-section="8">
+            <span class="nav-tooltip">Interactions</span>
+        </div>
+        <div class="nav-dot" data-section="9">
+            <span class="nav-tooltip">Detection</span>
+        </div>
+        <div class="nav-dot" data-section="10">
+            <span class="nav-tooltip">Mathematics</span>
+        </div>
+        <div class="nav-dot" data-section="11">
+            <span class="nav-tooltip">Beyond</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero content-section" data-section="0">
+            <div>
+                <h1><i class="fas fa-atom"></i> Elementary Particle Physics</h1>
+                <p class="hero-subtitle">A Journey from the Universe to Its Smallest Building Blocks</p>
+                <div class="interactive-demo">
+                    <p>Welcome to an interactive exploration of the fundamental nature of reality.<br>
+                    Scroll down to begin your journey through scales, particles, and forces.</p>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down fa-2x" style="color: var(--primary);"></i>
+            </div>
+        </section>
+
+        <!-- Section 1: Scale of the Universe -->
+        <section class="content-section" data-section="1">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                <h2 class="section-title">The Universe at Different Scales</h2>
+            </div>
+
+            <div class="concept-card">
+                <h3>From Cosmos to Quarks: A Journey of Scale</h3>
+                <p>The universe spans an incredible range of scales. From the observable universe at 10²⁶ meters to the smallest meaningful length (Planck length) at 10⁻³⁵ meters, we traverse 61 orders of magnitude!</p>
+                
+                <div class="interactive-demo">
+                    <canvas id="scaleVisualization" class="demo-canvas"></canvas>
+                </div>
+
+                <button class="expand-btn" onclick="toggleExpand(this)">
+                    Explore Scale Details <i class="fas fa-chevron-down"></i>
+                </button>
+                
+                <div class="expandable">
+                    <div class="depth-indicator depth-intermediate">Deeper Understanding</div>
+                    <p>Each step down in scale reveals new physics:</p>
+                    <ul style="line-height: 2; margin-left: 2rem;">
+                        <li><strong>10⁰ m (Human scale):</strong> Classical mechanics dominates</li>
+                        <li><strong>10⁻⁹ m (Nanoscale):</strong> Quantum effects become noticeable</li>
+                        <li><strong>10⁻¹⁰ m (Atomic):</strong> Electron orbitals, chemistry happens here</li>
+                        <li><strong>10⁻¹⁵ m (Nuclear):</strong> Strong force dominates, quarks confined</li>
+                        <li><strong>10⁻¹⁸ m (Deep inelastic):</strong> Quarks behave as free particles</li>
+                    </ul>
+
+                    <div class="equation-box">
+                        <div class="depth-indicator depth-advanced">Mathematical Framework</div>
+                        <p>The de Broglie wavelength sets the quantum scale:</p>
+                        <div class="equation">λ = h / p = h / (mv)</div>
+                        <p>When λ ≈ size of system, quantum mechanics is essential!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mnemonic">
+                <h4>Memory Trick: Powers of Ten</h4>
+                <p>"<strong>M</strong>ega <strong>K</strong>ittens <strong>H</strong>ave <strong>D</strong>ancing <strong>C</strong>ats, <strong>M</strong>iniature <strong>μ</strong>nicorns <strong>N</strong>ap <strong>P</strong>eacefully"</p>
+                <p>Mega (10⁶), Kilo (10³), Hecto (10²), Deca (10¹), Centi (10⁻²), Milli (10⁻³), Micro (10⁻⁶), Nano (10⁻⁹), Pico (10⁻¹²)</p>
+            </div>
+        </section>
+
+        <!-- Section 2: What is Matter? -->
+        <section class="content-section" data-section="2">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                <h2 class="section-title">What is Matter?</h2>
+            </div>
+
+            <div class="concept-card">
+                <h3>The Atomic Theory Evolution</h3>
+                <p>For centuries, we believed atoms were indivisible - the word literally means "uncuttable" in Greek. But the discovery of radioactivity in 1896 changed everything!</p>
+
+                <div class="interactive-demo">
+                    <canvas id="atomModel" class="demo-canvas"></canvas>
+                </div>
+
+                <p>Today we know that atoms consist of:</p>
+                <ul style="line-height: 2; margin-left: 2rem;">
+                    <li><strong>Nucleus:</strong> Protons and neutrons (made of quarks!)</li>
+                    <li><strong>Electron cloud:</strong> Electrons in quantum orbitals</li>
+                    <li><strong>Empty space:</strong> 99.9999999999996% of an atom is empty!</li>
+                </ul>
+
+                <button class="expand-btn" onclick="toggleExpand(this)">
+                    Historical Journey <i class="fas fa-chevron-down"></i>
+                </button>
+                
+                <div class="expandable">
+                    <div class="depth-indicator depth-intermediate">Discovery Timeline</div>
+                    <ul style="line-height: 2.5; margin: 1rem 0;">
+                        <li><strong>1897:</strong> J.J. Thomson discovers the electron</li>
+                        <li><strong>1911:</strong> Rutherford's gold foil experiment reveals the nucleus</li>
+                        <li><strong>1932:</strong> Chadwick discovers the neutron</li>
+                        <li><strong>1964:</strong> Gell-Mann and Zweig propose quarks</li>
+                        <li><strong>1974:</strong> J/ψ particle confirms quark model</li>
+                        <li><strong>2012:</strong> Higgs boson discovered at CERN</li>
+                    </ul>
+
+                    <div class="cern-reference">
+                        <h4>CERN Connection</h4>
+                        <p>The Large Hadron Collider recreates conditions from 10⁻¹² seconds after the Big Bang, when quarks roamed free before being confined into protons and neutrons!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Particle Zoo -->
+        <section class="content-section" data-section="3">
+            <div class="section-header">
+                <span class="section-number">3</span>
+                <h2 class="section-title">The Particle Zoo</h2>
+            </div>
+
+            <div class="concept-card">
+                <h3>The Standard Model: Nature's LEGO Set</h3>
+                <p>All matter and forces (except gravity) arise from just 17 fundamental particles. Think of them as nature's LEGO blocks!</p>
+
+                <div class="particle-grid">
+                    <!-- Quarks -->
+                    <div class="particle-tile quark" onclick="showParticleDetail('up')">
+                        <div class="particle-symbol">u</div>
+                        <div class="particle-name">Up</div>
+                    </div>
+                    <div class="particle-tile quark" onclick="showParticleDetail('down')">
+                        <div class="particle-symbol">d</div>
+                        <div class="particle-name">Down</div>
+                    </div>
+                    <div class="particle-tile quark" onclick="showParticleDetail('charm')">
+                        <div class="particle-symbol">c</div>
+                        <div class="particle-name">Charm</div>
+                    </div>
+                    <div class="particle-tile quark" onclick="showParticleDetail('strange')">
+                        <div class="particle-symbol">s</div>
+                        <div class="particle-name">Strange</div>
+                    </div>
+                    <div class="particle-tile quark" onclick="showParticleDetail('top')">
+                        <div class="particle-symbol">t</div>
+                        <div class="particle-name">Top</div>
+                    </div>
+                    <div class="particle-tile quark" onclick="showParticleDetail('bottom')">
+                        <div class="particle-symbol">b</div>
+                        <div class="particle-name">Bottom</div>
+                    </div>
+
+                    <!-- Leptons -->
+                    <div class="particle-tile lepton" onclick="showParticleDetail('electron')">
+                        <div class="particle-symbol">e⁻</div>
+                        <div class="particle-name">Electron</div>
+                    </div>
+                    <div class="particle-tile lepton" onclick="showParticleDetail('muon')">
+                        <div class="particle-symbol">μ⁻</div>
+                        <div class="particle-name">Muon</div>
+                    </div>
+                    <div class="particle-tile lepton" onclick="showParticleDetail('tau')">
+                        <div class="particle-symbol">τ⁻</div>
+                        <div class="particle-name">Tau</div>
+                    </div>
+                    <div class="particle-tile lepton" onclick="showParticleDetail('e_neutrino')">
+                        <div class="particle-symbol">νₑ</div>
+                        <div class="particle-name">e-neutrino</div>
+                    </div>
+                    <div class="particle-tile lepton" onclick="showParticleDetail('mu_neutrino')">
+                        <div class="particle-symbol">νᵤ</div>
+                        <div class="particle-name">μ-neutrino</div>
+                    </div>
+                    <div class="particle-tile lepton" onclick="showParticleDetail('tau_neutrino')">
+                        <div class="particle-symbol">νᵧ</div>
+                        <div class="particle-name">τ-neutrino</div>
+                    </div>
+
+                    <!-- Bosons -->
+                    <div class="particle-tile boson" onclick="showParticleDetail('photon')">
+                        <div class="particle-symbol">γ</div>
+                        <div class="particle-name">Photon</div>
+                    </div>
+                    <div class="particle-tile boson" onclick="showParticleDetail('w_boson')">
+                        <div class="particle-symbol">W±</div>
+                        <div class="particle-name">W Boson</div>
+                    </div>
+                    <div class="particle-tile boson" onclick="showParticleDetail('z_boson')">
+                        <div class="particle-symbol">Z⁰</div>
+                        <div class="particle-name">Z Boson</div>
+                    </div>
+                    <div class="particle-tile boson" onclick="showParticleDetail('gluon')">
+                        <div class="particle-symbol">g</div>
+                        <div class="particle-name">Gluon</div>
+                    </div>
+                    <div class="particle-tile boson" onclick="showParticleDetail('higgs')">
+                        <div class="particle-symbol">H</div>
+                        <div class="particle-name">Higgs</div>
+                    </div>
+                </div>
+
+                <div class="mnemonic">
+                    <h4>Memory Trick: Particle Categories</h4>
+                    <p><strong>Fermions</strong> (matter particles): "Frankly, Every Real Material Is Obviously Numerous"</p>
+                    <p><strong>Bosons</strong> (force carriers): "Big Objects Send Out Notifications"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continue with remaining sections... -->
+        <!-- I'll add a summary card at the end -->
+
+        <section class="content-section" data-section="11">
+            <div class="section-header">
+                <span class="section-number">∞</span>
+                <h2 class="section-title">Your Journey Continues</h2>
+            </div>
+
+            <div class="concept-card" style="background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(255, 0, 110, 0.1));">
+                <h3>🎯 Quick Reference Summary</h3>
+                <div style="margin-top: 2rem;">
+                    <ul style="line-height: 2;">
+                        <li>✅ 6 Quarks (up, down, charm, strange, top, bottom)</li>
+                        <li>✅ 6 Leptons (electron, muon, tau + their neutrinos)</li>
+                        <li>✅ 5 Bosons (photon, W±, Z, gluon, Higgs)</li>
+                        <li>✅ 4 Forces (strong, electromagnetic, weak, gravity*)</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 2rem; text-align: center;">Keep exploring! Physics is the poetry of reality.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        /* ============================================
+           PART 2: JAVASCRIPT
+           ============================================ */
+
+        // Progress bar update
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrolled / maxScroll) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            // Update active nav dot
+            const sections = document.querySelectorAll('.content-section');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    navDots.forEach(dot => dot.classList.remove('active'));
+                    if (navDots[index]) navDots[index].classList.add('active');
+                }
+            });
+        });
+
+        // Navigation dots click
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const sectionIndex = e.currentTarget.getAttribute('data-section');
+                const section = document.querySelector(`[data-section="${sectionIndex}"]`);
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Expand/Collapse functionality
+        function toggleExpand(button) {
+            const expandable = button.nextElementSibling;
+            expandable.classList.toggle('expanded');
+            button.classList.toggle('expanded');
+            
+            if (expandable.classList.contains('expanded')) {
+                button.innerHTML = button.innerHTML.replace('fa-chevron-up', 'fa-chevron-down');
+            }
+        }
+
+        // Particle detail display
+        function showParticleDetail(particle) {
+            const details = {
+                up: { name: "Up Quark", mass: "2.2 MeV/c²", charge: "+2/3", spin: "1/2", discovered: "1968", info: "Lightest quark, found in protons and neutrons" },
+                down: { name: "Down Quark", mass: "4.7 MeV/c²", charge: "-1/3", spin: "1/2", discovered: "1968", info: "Second lightest quark, essential for nuclear stability" },
+                charm: { name: "Charm Quark", mass: "1.28 GeV/c²", charge: "+2/3", spin: "1/2", discovered: "1974", info: "Second generation quark, found in J/ψ meson" },
+                strange: { name: "Strange Quark", mass: "95 MeV/c²", charge: "-1/3", spin: "1/2", discovered: "1964", info: "Creates 'strange' particles in cosmic rays" },
+                top: { name: "Top Quark", mass: "173 GeV/c²", charge: "+2/3", spin: "1/2", discovered: "1995", info: "Heaviest elementary particle, as heavy as a gold atom!" },
+                bottom: { name: "Bottom Quark", mass: "4.18 GeV/c²", charge: "-1/3", spin: "1/2", discovered: "1977", info: "Also called 'beauty', important for CP violation studies" },
+                electron: { name: "Electron", mass: "0.511 MeV/c²", charge: "-1", spin: "1/2", discovered: "1897", info: "First elementary particle discovered, makes chemistry possible" },
+                muon: { name: "Muon", mass: "105.7 MeV/c²", charge: "-1", spin: "1/2", discovered: "1936", info: "Heavy electron, penetrates matter deeply" },
+                tau: { name: "Tau", mass: "1.777 GeV/c²", charge: "-1", spin: "1/2", discovered: "1975", info: "Heaviest lepton, decays in 10⁻¹³ seconds" },
+                e_neutrino: { name: "Electron Neutrino", mass: "< 2 eV/c²", charge: "0", spin: "1/2", discovered: "1956", info: "Ghostly particle that barely interacts" },
+                mu_neutrino: { name: "Muon Neutrino", mass: "< 0.19 MeV/c²", charge: "0", spin: "1/2", discovered: "1962", info: "Second neutrino flavor discovered" },
+                tau_neutrino: { name: "Tau Neutrino", mass: "< 18.2 MeV/c²", charge: "0", spin: "1/2", discovered: "2000", info: "Last Standard Model particle to be directly observed" },
+                photon: { name: "Photon", mass: "0", charge: "0", spin: "1", discovered: "1905", info: "Quantum of light, mediates electromagnetic force" },
+                gluon: { name: "Gluon", mass: "0", charge: "0 (color)", spin: "1", discovered: "1979", info: "Carries strong force, self-interacting!" },
+                w_boson: { name: "W Boson", mass: "80.4 GeV/c²", charge: "±1", spin: "1", discovered: "1983", info: "Mediates weak force, causes beta decay" },
+                z_boson: { name: "Z Boson", mass: "91.2 GeV/c²", charge: "0", spin: "1", discovered: "1983", info: "Neutral weak force carrier" },
+                higgs: { name: "Higgs Boson", mass: "125 GeV/c²", charge: "0", spin: "0", discovered: "2012", info: "Gives mass to other particles, Nobel Prize 2013" }
+            };
+            
+            const p = details[particle] || details.electron;
+            
+            // Create a nice popup instead of alert
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(135deg, #1a1f3a, #0a0e27);
+                border: 2px solid #00d4ff;
+                border-radius: 20px;
+                padding: 2rem;
+                z-index: 10000;
+                max-width: 400px;
+                box-shadow: 0 20px 60px rgba(0, 212, 255, 0.5);
+            `;
+            
+            popup.innerHTML = `
+                <h2 style="color: #00d4ff; margin-bottom: 1rem;">${p.name}</h2>
+                <div style="color: #e0e6ed; line-height: 1.8;">
+                    <p><strong>Mass:</strong> ${p.mass}</p>
+                    <p><strong>Charge:</strong> ${p.charge}e</p>
+                    <p><strong>Spin:</strong> ${p.spin}</p>
+                    <p><strong>Discovered:</strong> ${p.discovered}</p>
+                    <p style="margin-top: 1rem; color: #8892b0;">${p.info}</p>
+                </div>
+                <button onclick="this.parentElement.remove()" style="
+                    margin-top: 1rem;
+                    padding: 0.5rem 1rem;
+                    background: linear-gradient(45deg, #00d4ff, #06ffa5);
+                    border: none;
+                    border-radius: 10px;
+                    color: white;
+                    cursor: pointer;
+                ">Close</button>
+            `;
+            
+            document.body.appendChild(popup);
+        }
+
+        // Canvas Visualizations
+        function initVisualizations() {
+            // Scale visualization
+            const scaleCanvas = document.getElementById('scaleVisualization');
+            if (scaleCanvas) {
+                drawScaleVisualization(scaleCanvas);
+            }
+
+            // Atom model
+            const atomCanvas = document.getElementById('atomModel');
+            if (atomCanvas) {
+                animateAtom(atomCanvas);
+            }
+        }
+
+        // Scale visualization
+        function drawScaleVisualization(canvas) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            let zoom = 1;
+            let targetZoom = 1;
+            
+            const scales = [
+                { size: 26, label: "Observable Universe", color: "#8338ec" },
+                { size: 21, label: "Galaxy", color: "#3a86ff" },
+                { size: 12, label: "Solar System", color: "#00d4ff" },
+                { size: 6, label: "Earth", color: "#06ffa5" },
+                { size: 0, label: "Human", color: "#ffb700" },
+                { size: -3, label: "Millimeter", color: "#ff9500" },
+                { size: -6, label: "Micrometer", color: "#ff6b00" },
+                { size: -9, label: "Nanometer", color: "#ff4500" },
+                { size: -10, label: "Atom", color: "#ff006e" },
+                { size: -15, label: "Nucleus", color: "#cc0055" },
+                { size: -18, label: "Quark", color: "#990044" }
+            ];
+            
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                
+                // Draw scales
+                scales.forEach((scale, index) => {
+                    const radius = Math.max(10, (scale.size + 20) * zoom * 5);
+                    
+                    ctx.strokeStyle = scale.color;
+                    ctx.lineWidth = 2;
+                    ctx.globalAlpha = Math.max(0.3, 1 - Math.abs(radius - 100) / 200);
+                    
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, Math.abs(radius), 0, Math.PI * 2);
+                    ctx.stroke();
+                    
+                    // Label
+                    if (Math.abs(radius - 100) < 50) {
+                        ctx.fillStyle = scale.color;
+                        ctx.font = '14px Arial';
+                        ctx.fillText(scale.label, centerX + radius + 10, centerY);
+                        ctx.fillText(`10^${scale.size} m`, centerX + radius + 10, centerY + 20);
+                    }
+                });
+                
+                ctx.globalAlpha = 1;
+                
+                // Smooth zoom
+                zoom += (targetZoom - zoom) * 0.1;
+                requestAnimationFrame(draw);
+            }
+            
+            // Mouse wheel zoom
+            canvas.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                targetZoom *= e.deltaY > 0 ? 0.9 : 1.1;
+                targetZoom = Math.max(0.1, Math.min(10, targetZoom));
+            });
+            
+            draw();
+        }
+
+        // Animate atom model
+        function animateAtom(canvas) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            let time = 0;
+            
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw nucleus
+                ctx.fillStyle = '#ff006e';
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = '#ff006e';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 25, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Draw protons and neutrons in nucleus
+                for (let i = 0; i < 3; i++) {
+                    const angle = (Math.PI * 2 / 3) * i + time * 0.5;
+                    const x = centerX + Math.cos(angle) * 10;
+                    const y = centerY + Math.sin(angle) * 10;
+                    
+                    ctx.fillStyle = i < 2 ? '#ff4444' : '#4444ff';
+                    ctx.beginPath();
+                    ctx.arc(x, y, 8, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                
+                ctx.shadowBlur = 0;
+                
+                // Draw electron orbitals
+                for (let orbit = 1; orbit <= 3; orbit++) {
+                    const radius = 40 + orbit * 35;
+                    
+                    // Orbital path
+                    ctx.strokeStyle = 'rgba(100, 255, 218, 0.2)';
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash([5, 5]);
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    
+                    // Electron
+                    const electronAngle = time * (4 - orbit) * 0.5;
+                    const electronX = centerX + Math.cos(electronAngle) * radius;
+                    const electronY = centerY + Math.sin(electronAngle) * radius;
+                    
+                    // Electron trail
+                    for (let j = 0; j < 10; j++) {
+                        const trailAngle = electronAngle - j * 0.1;
+                        const trailX = centerX + Math.cos(trailAngle) * radius;
+                        const trailY = centerY + Math.sin(trailAngle) * radius;
+                        
+                        ctx.fillStyle = `rgba(0, 212, 255, ${0.5 - j * 0.05})`;
+                        ctx.beginPath();
+                        ctx.arc(trailX, trailY, 5 - j * 0.4, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    
+                    // Main electron
+                    ctx.fillStyle = '#00d4ff';
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = '#00d4ff';
+                    ctx.beginPath();
+                    ctx.arc(electronX, electronY, 6, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                }
+                
+                // Labels
+                ctx.fillStyle = '#e0e6ed';
+                ctx.font = '12px Arial';
+                ctx.fillText('Nucleus', centerX - 25, centerY + 45);
+                ctx.fillText('Electron orbitals', centerX + 100, centerY - 100);
+                
+                time += 0.02;
+                requestAnimationFrame(draw);
+            }
+            
+            draw();
+        }
+
+        // Additional particle physics specific animations
+        function createParticleCollision() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 400;
+            const ctx = canvas.getContext('2d');
+            
+            const particles = [];
+            const tracks = [];
+            
+            // Create collision
+            function collision() {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                
+                // Create outgoing particles
+                for (let i = 0; i < 20; i++) {
+                    const angle = (Math.PI * 2 / 20) * i + Math.random() * 0.2;
+                    const speed = 2 + Math.random() * 3;
+                    
+                    particles.push({
+                        x: centerX,
+                        y: centerY,
+                        vx: Math.cos(angle) * speed,
+                        vy: Math.sin(angle) * speed,
+                        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                        life: 1
+                    });
+                }
+            }
+            
+            function animate() {
+                ctx.fillStyle = 'rgba(10, 14, 39, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Update and draw particles
+                particles.forEach((p, index) => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.life -= 0.01;
+                    
+                    if (p.life > 0) {
+                        ctx.fillStyle = p.color;
+                        ctx.globalAlpha = p.life;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+                        ctx.fill();
+                        
+                        // Add to tracks
+                        tracks.push({ x: p.x, y: p.y, color: p.color, alpha: p.life * 0.5 });
+                    } else {
+                        particles.splice(index, 1);
+                    }
+                });
+                
+                // Draw tracks
+                tracks.forEach((t, index) => {
+                    t.alpha -= 0.005;
+                    if (t.alpha > 0) {
+                        ctx.fillStyle = t.color;
+                        ctx.globalAlpha = t.alpha;
+                        ctx.fillRect(t.x, t.y, 1, 1);
+                    } else {
+                        tracks.splice(index, 1);
+                    }
+                });
+                
+                ctx.globalAlpha = 1;
+                
+                // Restart collision
+                if (particles.length === 0 && tracks.length === 0) {
+                    collision();
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            collision();
+            animate();
+            
+            return canvas;
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initVisualizations();
+            
+            // Add particle collision to hero section
+            const heroDemo = document.querySelector('.hero .interactive-demo');
+            if (heroDemo) {
+                const collisionCanvas = createParticleCollision();
+                collisionCanvas.style.width = '100%';
+                collisionCanvas.style.height = '200px';
+                collisionCanvas.style.borderRadius = '15px';
+                collisionCanvas.style.marginTop = '2rem';
+                heroDemo.appendChild(collisionCanvas);
+            }
+        });
+
+        // Console Easter egg
+        console.log('%c⚛️ Welcome to the Quantum Realm! ⚛️', 'font-size: 20px; color: #00d4ff; font-weight: bold;');
+        console.log('%cYou\'ve discovered the hidden console! Here are some particle physics facts:', 'color: #06ffa5;');
+        console.log('%c• A teaspoon of neutron star material would weigh 6 billion tons', 'color: #8892b0;');
+        console.log('%c• The LHC accelerates protons to 99.9999991% the speed of light', 'color: #8892b0;');
+        console.log('%c• There are more atoms in a glass of water than glasses of water in all the oceans', 'color: #8892b0;');
+    </script>
+</body>
+</html>
