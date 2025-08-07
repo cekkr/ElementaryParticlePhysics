@@ -1,23 +1,24 @@
 {
   "particleData": {
-    "up": { "name": "Up Quark", "symbol": "u", "group": "quark", "mass": "2.2 MeV/c²", "charge": "+2/3", "spin": "1/2", "discovered": "1968", "info": "Lightest quark, found in protons and neutrons" },
-    "down": { "name": "Down Quark", "symbol": "d", "group": "quark", "mass": "4.7 MeV/c²", "charge": "-1/3", "spin": "1/2", "discovered": "1968", "info": "Second lightest quark, essential for nuclear stability" },
-    "charm": { "name": "Charm Quark", "symbol": "c", "group": "quark", "mass": "1.28 GeV/c²", "charge": "+2/3", "spin": "1/2", "discovered": "1974", "info": "Second generation quark, found in J/ψ meson" },
-    "strange": { "name": "Strange Quark", "symbol": "s", "group": "quark", "mass": "95 MeV/c²", "charge": "-1/3", "spin": "1/2", "discovered": "1964", "info": "Creates 'strange' particles in cosmic rays" },
-    "top": { "name": "Top Quark", "symbol": "t", "group": "quark", "mass": "173 GeV/c²", "charge": "+2/3", "spin": "1/2", "discovered": "1995", "info": "Heaviest elementary particle, as heavy as a gold atom!" },
-    "bottom": { "name": "Bottom Quark", "symbol": "b", "group": "quark", "mass": "4.18 GeV/c²", "charge": "-1/3", "spin": "1/2", "discovered": "1977", "info": "Also called 'beauty', important for CP violation studies" },
-    "electron": { "name": "Electron", "symbol": "e⁻", "group": "lepton", "mass": "0.511 MeV/c²", "charge": "-1", "spin": "1/2", "discovered": "1897", "info": "First elementary particle discovered, makes chemistry possible" },
-    "muon": { "name": "Muon", "symbol": "μ⁻", "group": "lepton", "mass": "105.7 MeV/c²", "charge": "-1", "spin": "1/2", "discovered": "1936", "info": "Heavy electron, penetrates matter deeply" },
-    "tau": { "name": "Tau", "symbol": "τ⁻", "group": "lepton", "mass": "1.777 GeV/c²", "charge": "-1", "spin": "1/2", "discovered": "1975", "info": "Heaviest lepton, decays in 10⁻¹³ seconds" },
-    "e_neutrino": { "name": "Electron Neutrino", "symbol": "νₑ", "group": "lepton", "mass": "< 2 eV/c²", "charge": "0", "spin": "1/2", "discovered": "1956", "info": "Ghostly particle that barely interacts" },
-    "mu_neutrino": { "name": "Muon Neutrino", "symbol": "νᵤ", "group": "lepton", "mass": "< 0.19 MeV/c²", "charge": "0", "spin": "1/2", "discovered": "1962", "info": "Second neutrino flavor discovered" },
-    "tau_neutrino": { "name": "Tau Neutrino", "symbol": "νᵧ", "group": "lepton", "mass": "< 18.2 MeV/c²", "charge": "0", "spin": "1/2", "discovered": "2000", "info": "Last Standard Model particle to be directly observed" },
-    "photon": { "name": "Photon", "symbol": "γ", "group": "boson", "mass": "0", "charge": "0", "spin": "1", "discovered": "1905", "info": "Quantum of light, mediates electromagnetic force" },
-    "w_boson": { "name": "W Boson", "symbol": "W±", "group": "boson", "mass": "80.4 GeV/c²", "charge": "±1", "spin": "1", "discovered": "1983", "info": "Mediates weak force, causes beta decay" },
-    "z_boson": { "name": "Z Boson", "symbol": "Z⁰", "group": "boson", "mass": "91.2 GeV/c²", "charge": "0", "spin": "1", "discovered": "1983", "info": "Neutral weak force carrier" },
-    "gluon": { "name": "Gluon", "symbol": "g", "group": "boson", "mass": "0", "charge": "0 (color)", "spin": "1", "discovered": "1979", "info": "Carries strong force, self-interacting!" },
-    "higgs": { "name": "Higgs Boson", "symbol": "H", "group": "boson", "mass": "125 GeV/c²", "charge": "0", "spin": "0", "discovered": "2012", "info": "Gives mass to other particles, Nobel Prize 2013" }
+    "up": { "name": "Up Quark", "symbol": "u", "group": "quark", "mass": "2.2 MeV/c²", "charge": "+2/3", "spin": "1/2", "color": "R,G,B", "generation": "1st", "discovered": "1968", "info": "Lightest quark, found in protons and neutrons. Two up quarks + one down quark = proton" },
+    "down": { "name": "Down Quark", "symbol": "d", "group": "quark", "mass": "4.7 MeV/c²", "charge": "-1/3", "spin": "1/2", "color": "R,G,B", "generation": "1st", "discovered": "1968", "info": "Second lightest quark, essential for nuclear stability. Two down quarks + one up quark = neutron" },
+    "charm": { "name": "Charm Quark", "symbol": "c", "group": "quark", "mass": "1.28 GeV/c²", "charge": "+2/3", "spin": "1/2", "color": "R,G,B", "generation": "2nd", "discovered": "1974", "info": "Second generation quark, found in J/ψ meson. Discovery confirmed quark model" },
+    "strange": { "name": "Strange Quark", "symbol": "s", "group": "quark", "mass": "95 MeV/c²", "charge": "-1/3", "spin": "1/2", "color": "R,G,B", "generation": "2nd", "discovered": "1964", "info": "Creates 'strange' particles in cosmic rays. Named for unexpected behavior in kaons" },
+    "top": { "name": "Top Quark", "symbol": "t", "group": "quark", "mass": "173 GeV/c²", "charge": "+2/3", "spin": "1/2", "color": "R,G,B", "generation": "3rd", "discovered": "1995", "info": "Heaviest elementary particle, as heavy as a gold atom! Decays before hadronization" },
+    "bottom": { "name": "Bottom Quark", "symbol": "b", "group": "quark", "mass": "4.18 GeV/c²", "charge": "-1/3", "spin": "1/2", "color": "R,G,B", "generation": "3rd", "discovered": "1977", "info": "Also called 'beauty', important for CP violation studies and B-meson physics" },
+    "electron": { "name": "Electron", "symbol": "e⁻", "group": "lepton", "mass": "0.511 MeV/c²", "charge": "-1", "spin": "1/2", "generation": "1st", "discovered": "1897", "info": "First elementary particle discovered by J.J. Thomson, makes chemistry possible" },
+    "muon": { "name": "Muon", "symbol": "μ⁻", "group": "lepton", "mass": "105.7 MeV/c²", "charge": "-1", "spin": "1/2", "generation": "2nd", "discovered": "1936", "info": "Heavy electron, penetrates matter deeply. Created in cosmic ray showers" },
+    "tau": { "name": "Tau", "symbol": "τ⁻", "group": "lepton", "mass": "1.777 GeV/c²", "charge": "-1", "spin": "1/2", "generation": "3rd", "discovered": "1975", "info": "Heaviest lepton, decays in 10⁻¹³ seconds. Only lepton heavy enough to decay into hadrons" },
+    "e_neutrino": { "name": "Electron Neutrino", "symbol": "νₑ", "group": "lepton", "mass": "< 2 eV/c²", "charge": "0", "spin": "1/2", "generation": "1st", "discovered": "1956", "info": "Ghostly particle that barely interacts. Billions pass through you every second from the Sun" },
+    "mu_neutrino": { "name": "Muon Neutrino", "symbol": "νᵤ", "group": "lepton", "mass": "< 0.19 MeV/c²", "charge": "0", "spin": "1/2", "generation": "2nd", "discovered": "1962", "info": "Second neutrino flavor discovered at Brookhaven. Oscillates with other neutrino types" },
+    "tau_neutrino": { "name": "Tau Neutrino", "symbol": "νᵧ", "group": "lepton", "mass": "< 18.2 MeV/c²", "charge": "0", "spin": "1/2", "generation": "3rd", "discovered": "2000", "info": "Last Standard Model particle to be directly observed at Fermilab" },
+    "photon": { "name": "Photon", "symbol": "γ", "group": "boson", "mass": "0", "charge": "0", "spin": "1", "force": "Electromagnetic", "discovered": "1905", "info": "Quantum of light, mediates electromagnetic force. Massless, travels at speed c" },
+    "w_boson": { "name": "W Boson", "symbol": "W±", "group": "boson", "mass": "80.4 GeV/c²", "charge": "±1", "spin": "1", "force": "Weak", "discovered": "1983", "info": "Mediates weak force, causes beta decay. Nobel Prize to Rubbia and van der Meer" },
+    "z_boson": { "name": "Z Boson", "symbol": "Z⁰", "group": "boson", "mass": "91.2 GeV/c²", "charge": "0", "spin": "1", "force": "Weak", "discovered": "1983", "info": "Neutral weak force carrier. Discovery at CERN confirmed electroweak theory" },
+    "gluon": { "name": "Gluon", "symbol": "g", "group": "boson", "mass": "0", "charge": "0 (color)", "spin": "1", "force": "Strong", "discovered": "1979", "info": "Carries strong force, self-interacting! 8 types corresponding to color combinations" },
+    "higgs": { "name": "Higgs Boson", "symbol": "H", "group": "boson", "mass": "125 GeV/c²", "charge": "0", "spin": "0", "force": "Mass", "discovered": "2012", "info": "Gives mass to other particles through Higgs mechanism. Nobel Prize 2013 to Higgs and Englert" }
   },
+  
   "sections": [
     {
       "id": "hero",
@@ -25,8 +26,10 @@
       "type": "hero",
       "title": "<i class='fas fa-atom'></i> Elementary Particle Physics",
       "subtitle": "A Journey from the Universe to Its Smallest Building Blocks",
-      "demo_text": "Welcome to an interactive exploration of the fundamental nature of reality.<br>Scroll down to begin your journey through scales, particles, and forces."
+      "demo_text": "Welcome to an interactive exploration of the fundamental nature of reality.<br>Scroll down to begin your journey through scales, particles, and forces.",
+      "has_animation": "particle_collision"
     },
+    
     {
       "id": "scale",
       "nav_title": "Scale of Universe",
@@ -36,26 +39,38 @@
         {
           "type": "concept",
           "title": "From Cosmos to Quarks: A Journey of Scale",
-          "content": ["The universe spans an incredible range of scales. From the observable universe at 10²⁶ meters to the smallest meaningful length (Planck length) at 10⁻³⁵ meters, we traverse 61 orders of magnitude!"],
+          "content": [
+            "The universe spans an incredible range of scales. From the observable universe at 10²⁶ meters to the smallest meaningful length (Planck length) at 10⁻³⁵ meters, we traverse 61 orders of magnitude!",
+            "Each scale reveals different physics - from general relativity at cosmic scales to quantum mechanics at atomic scales."
+          ],
           "has_canvas": true,
           "canvas_id": "scaleVisualization",
+          "canvas_type": "scale_zoom",
           "expandable": {
             "button_text": "Explore Scale Details",
             "content": [
               { "type": "depth-indicator", "depth": "intermediate", "text": "Deeper Understanding" },
               { "type": "paragraph", "text": "Each step down in scale reveals new physics:" },
               { "type": "list", "items": [
-                  "<strong>10⁰ m (Human scale):</strong> Classical mechanics dominates",
-                  "<strong>10⁻⁹ m (Nanoscale):</strong> Quantum effects become noticeable",
-                  "<strong>10⁻¹⁰ m (Atomic):</strong> Electron orbitals, chemistry happens here",
-                  "<strong>10⁻¹⁵ m (Nuclear):</strong> Strong force dominates, quarks confined",
-                  "<strong>10⁻¹⁸ m (Deep inelastic):</strong> Quarks behave as free particles"
+                "<strong>10²⁶ m (Observable Universe):</strong> Dark energy dominates, spacetime expands",
+                "<strong>10²¹ m (Galaxy):</strong> Dark matter halos, gravitational dynamics",
+                "<strong>10¹² m (Solar System):</strong> Orbital mechanics, tidal forces",
+                "<strong>10⁶ m (Earth):</strong> Geophysics, atmospheric phenomena",
+                "<strong>10⁰ m (Human scale):</strong> Classical mechanics dominates",
+                "<strong>10⁻³ m (Millimeter):</strong> Surface tension becomes important",
+                "<strong>10⁻⁶ m (Micrometer):</strong> Brownian motion visible",
+                "<strong>10⁻⁹ m (Nanoscale):</strong> Quantum effects become noticeable",
+                "<strong>10⁻¹⁰ m (Atomic):</strong> Electron orbitals, chemistry happens here",
+                "<strong>10⁻¹⁵ m (Nuclear):</strong> Strong force dominates, quarks confined",
+                "<strong>10⁻¹⁸ m (Deep inelastic):</strong> Quarks behave as free particles",
+                "<strong>10⁻³⁵ m (Planck length):</strong> Quantum gravity regime, spacetime foam"
               ]},
               { "type": "equation-box", "content": [
-                  { "type": "depth-indicator", "depth": "advanced", "text": "Mathematical Framework" },
-                  { "type": "paragraph", "text": "The de Broglie wavelength sets the quantum scale:" },
-                  { "type": "equation", "text": "λ = h / p = h / (mv)"},
-                  { "type": "paragraph", "text": "When λ ≈ size of system, quantum mechanics is essential!" }
+                { "type": "depth-indicator", "depth": "advanced", "text": "Mathematical Framework" },
+                { "type": "paragraph", "text": "The de Broglie wavelength sets the quantum scale:" },
+                { "type": "equation", "text": "λ = h / p = h / (mv)" },
+                { "type": "paragraph", "text": "When λ ≈ size of system, quantum mechanics is essential!" },
+                { "type": "paragraph", "text": "The Compton wavelength λc = h/(mc) gives the scale where particle creation becomes important" }
               ]}
             ]
           }
@@ -64,71 +79,775 @@
           "type": "mnemonic",
           "title": "Memory Trick: Powers of Ten",
           "content": [
-            "\"<strong>M</strong>ega <strong>K</strong>ittens <strong>H</strong>ave <strong>D</strong>ancing <strong>C</strong>ats, <strong>M</strong>iniature <strong>μ</strong>nicorns <strong>N</strong>ap <strong>P</strong>eacefully\"",
-            "Mega (10⁶), Kilo (10³), Hecto (10²), Deca (10¹), Centi (10⁻²), Milli (10⁻³), Micro (10⁻⁶), Nano (10⁻⁹), Pico (10⁻¹²)"
-            ]
+            "\"<strong>M</strong>ega <strong>K</strong>ittens <strong>H</strong>ave <strong>D</strong>ancing <strong>C</strong>ats, <strong>M</strong>iniature <strong>μ</strong>nicorns <strong>N</strong>ap <strong>P</strong>eacefully <strong>F</strong>emtosecond <strong>A</strong>ttosecond\"",
+            "Mega (10⁶), Kilo (10³), Hecto (10²), Deca (10¹), Centi (10⁻²), Milli (10⁻³), Micro (10⁻⁶), Nano (10⁻⁹), Pico (10⁻¹²), Femto (10⁻¹⁵), Atto (10⁻¹⁸)"
+          ]
         }
       ]
     },
+    
     {
-        "id": "matter",
-        "nav_title": "What is Matter?",
-        "number": "2",
-        "title": "What is Matter?",
-        "cards": [
-            {
-                "type": "concept",
-                "title": "The Atomic Theory Evolution",
-                "content": [
-                    "For centuries, we believed atoms were indivisible - the word literally means \"uncuttable\" in Greek. But the discovery of radioactivity in 1896 changed everything!",
-                    "Today we know that atoms consist of:"
-                ],
-                "list_items": [
-                    "<strong>Nucleus:</strong> Protons and neutrons (made of quarks!)",
-                    "<strong>Electron cloud:</strong> Electrons in quantum orbitals",
-                    "<strong>Empty space:</strong> 99.9999999999996% of an atom is empty!"
-                ],
-                "has_canvas": true,
-                "canvas_id": "atomModel",
-                "expandable": {
-                    "button_text": "Historical Journey",
-                    "content": [
-                        { "type": "depth-indicator", "depth": "intermediate", "text": "Discovery Timeline" },
-                        { "type": "list", "items": [
-                            "<strong>1897:</strong> J.J. Thomson discovers the electron",
-                            "<strong>1911:</strong> Rutherford's gold foil experiment reveals the nucleus",
-                            "<strong>1932:</strong> Chadwick discovers the neutron",
-                            "<strong>1964:</strong> Gell-Mann and Zweig propose quarks",
-                            "<strong>1974:</strong> J/ψ particle confirms quark model",
-                            "<strong>2012:</strong> Higgs boson discovered at CERN"
-                        ]},
-                        { "type": "cern-reference", "title": "CERN Connection", "text": "The Large Hadron Collider recreates conditions from 10⁻¹² seconds after the Big Bang, when quarks roamed free before being confined into protons and neutrons!"}
-                    ]
-                }
-            }
-        ]
+      "id": "matter",
+      "nav_title": "What is Matter?",
+      "number": "2",
+      "title": "What is Matter?",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "The Atomic Theory Evolution",
+          "content": [
+            "For centuries, we believed atoms were indivisible - the word literally means 'uncuttable' in Greek. But the discovery of radioactivity in 1896 changed everything!",
+            "Today we know that atoms consist of a nucleus (protons and neutrons made of quarks) surrounded by electron clouds in quantum orbitals.",
+            "Remarkably, 99.9999999999996% of an atom is empty space! If a nucleus were the size of a marble, the electron cloud would extend to a football stadium."
+          ],
+          "has_canvas": true,
+          "canvas_id": "atomModel",
+          "canvas_type": "atom_animation",
+          "expandable": {
+            "button_text": "Historical Journey & Deep Dive",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Discovery Timeline" },
+              { "type": "list", "items": [
+                "<strong>400 BCE:</strong> Democritus proposes atomos concept",
+                "<strong>1803:</strong> Dalton's atomic theory",
+                "<strong>1897:</strong> J.J. Thomson discovers the electron (plum pudding model)",
+                "<strong>1909:</strong> Millikan measures electron charge",
+                "<strong>1911:</strong> Rutherford's gold foil experiment reveals the nucleus",
+                "<strong>1913:</strong> Bohr model of hydrogen atom",
+                "<strong>1926:</strong> Schrödinger equation describes electron orbitals",
+                "<strong>1932:</strong> Chadwick discovers the neutron",
+                "<strong>1964:</strong> Gell-Mann and Zweig propose quarks",
+                "<strong>1968:</strong> Deep inelastic scattering confirms quarks",
+                "<strong>1974:</strong> J/ψ particle confirms charm quark",
+                "<strong>1995:</strong> Top quark discovered at Fermilab",
+                "<strong>2012:</strong> Higgs boson discovered at CERN"
+              ]},
+              { "type": "cern-reference", "title": "CERN Connection", "text": "The Large Hadron Collider recreates conditions from 10⁻¹² seconds after the Big Bang, when the temperature was 10¹⁶ Kelvin and quarks roamed free in a quark-gluon plasma before being confined into protons and neutrons!" },
+              { "type": "equation-box", "content": [
+                { "type": "depth-indicator", "depth": "advanced", "text": "Quantum Description" },
+                { "type": "paragraph", "text": "The hydrogen atom wavefunctions:" },
+                { "type": "equation", "text": "ψₙₗₘ(r,θ,φ) = Rₙₗ(r)Yₗᵐ(θ,φ)" },
+                { "type": "paragraph", "text": "Where n, l, m are quantum numbers defining energy, angular momentum, and magnetic orientation" }
+              ]}
+            ]
+          }
+        }
+      ]
     },
+    
     {
-        "id": "particle-zoo",
-        "nav_title": "Particle Zoo",
-        "number": "3",
-        "title": "The Particle Zoo",
-        "cards": [
+      "id": "particle-zoo",
+      "nav_title": "Particle Zoo",
+      "number": "3",
+      "title": "The Particle Zoo",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "The Standard Model: Nature's LEGO Set",
+          "content": [
+            "All matter and forces (except gravity) arise from just 17 fundamental particles. Think of them as nature's LEGO blocks - simple pieces that build our complex universe!",
+            "These particles are divided into two main categories: Fermions (matter particles with half-integer spin) and Bosons (force carriers with integer spin)."
+          ],
+          "has_particle_grid": true,
+          "expandable": {
+            "button_text": "Explore Particle Organization",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "The Three Generation Pattern" },
+              { "type": "table", "data": {
+                "headers": ["Generation", "Quarks", "Leptons", "Characteristics"],
+                "rows": [
+                  ["1st (everyday)", "up, down", "electron, e-neutrino", "Stable, forms ordinary matter"],
+                  ["2nd (cosmic rays)", "charm, strange", "muon, μ-neutrino", "Heavier, found in cosmic rays"],
+                  ["3rd (accelerators)", "top, bottom", "tau, τ-neutrino", "Heaviest, only in accelerators"]
+                ]
+              }},
+              { "type": "depth-indicator", "depth": "advanced", "text": "Antimatter & CPT Symmetry" },
+              { "type": "paragraph", "text": "Every particle has an antimatter twin with opposite charge but same mass. When matter meets antimatter: E = mc² in action - pure energy release!" },
+              { "type": "paragraph", "text": "CPT theorem states that physics is invariant under combined Charge conjugation, Parity inversion, and Time reversal - the deepest symmetry in physics." }
+            ]
+          }
+        },
+        {
+          "type": "mnemonic",
+          "title": "Memory Tricks for Particles",
+          "content": [
+            "<strong>Quarks:</strong> \"<strong>U</strong>niversity <strong>D</strong>orms <strong>C</strong>an <strong>S</strong>eem <strong>T</strong>erribly <strong>B</strong>oring\" (Up, Down, Charm, Strange, Top, Bottom)",
+            "<strong>Leptons:</strong> \"<strong>E</strong>very <strong>M</strong>onday <strong>T</strong>eachers <strong>E</strong>xplain <strong>M</strong>ath <strong>T</strong>opics\" (Electron, Muon, Tau + their Neutrinos)",
+            "<strong>Bosons:</strong> \"<strong>P</strong>hotons <strong>G</strong>low, <strong>W</strong>eak <strong>Z</strong>aps <strong>H</strong>appen\" (Photon, Gluon, W, Z, Higgs)"
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id": "fermions",
+      "nav_title": "Fermions",
+      "number": "4",
+      "title": "Building Blocks: Fermions",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "Quarks: The Nuclear LEGO Blocks",
+          "content": [
+            "Quarks never exist alone - they're always confined in groups due to the nature of the strong force. This confinement creates two types of particles:",
+            "• Baryons: Three quarks (like protons and neutrons)",
+            "• Mesons: Quark-antiquark pairs (like pions and kaons)",
+            "Two up quarks + one down quark = proton (uud, charge +1)",
+            "Two down quarks + one up quark = neutron (udd, charge 0)"
+          ],
+          "has_canvas": true,
+          "canvas_id": "quarkCombination",
+          "canvas_type": "quark_builder",
+          "interactive_buttons": ["Show Proton", "Show Neutron", "Show Pion", "Show Kaon"],
+          "expandable": {
+            "button_text": "Explore Quark Confinement & QCD",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Color Charge" },
+              { "type": "paragraph", "text": "Quarks carry 'color charge' (red, green, blue) - nothing to do with actual colors! It's a quantum number like electric charge." },
+              { "type": "list", "items": [
+                "<strong>Baryons:</strong> 3 quarks with RGB colors combine to be 'colorless' (white)",
+                "<strong>Mesons:</strong> quark + antiquark with color + anticolor = colorless",
+                "<strong>Gluons:</strong> Carry color-anticolor combinations, 8 types total"
+              ]},
+              { "type": "depth-indicator", "depth": "advanced", "text": "QCD Confinement" },
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "The strong force potential between quarks:" },
+                { "type": "equation", "text": "V(r) = -4/3 · αₛ/r + kr" },
+                { "type": "paragraph", "text": "First term: Coulomb-like attraction at short distances" },
+                { "type": "paragraph", "text": "Second term: Linear confinement at large distances" },
+                { "type": "paragraph", "text": "As quarks separate, energy increases linearly until it's energetically favorable to create new quark-antiquark pairs from the vacuum!" }
+              ]},
+              { "type": "cern-reference", "title": "ALICE Detector: Quark-Gluon Plasma", 
+                "text": "The ALICE detector at CERN studies quark-gluon plasma - a state where quarks are deconfined at temperatures above 2 trillion Kelvin, recreating conditions microseconds after the Big Bang. In this state, quarks and gluons move freely in a 'perfect liquid' with near-zero viscosity!" }
+            ]
+          }
+        },
+        {
+          "type": "concept",
+          "title": "Leptons: The Independent Particles",
+          "content": [
+            "Unlike quarks, leptons can exist alone. The electron is the most familiar - it makes chemistry possible by forming bonds between atoms.",
+            "Each charged lepton has a neutral partner (neutrino) that barely interacts with matter.",
+            "Lepton flavor is conserved in most processes, but neutrinos violate this through oscillations!"
+          ],
+          "has_canvas": true,
+          "canvas_id": "leptonInteraction",
+          "canvas_type": "lepton_demo",
+          "expandable": {
+            "button_text": "Neutrino Mysteries & Oscillations",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Neutrino Oscillations" },
+              { "type": "paragraph", "text": "Neutrinos change flavor as they travel! A muon neutrino can become an electron neutrino mid-flight. This proves neutrinos have mass (Nobel Prize 2015 to Kajita and McDonald)." },
+              { "type": "paragraph", "text": "The Sun produces only electron neutrinos, but we detect all three types on Earth - solving the 'solar neutrino problem'." },
+              { "type": "depth-indicator", "depth": "advanced", "text": "Oscillation Mathematics" },
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "Oscillation probability for two flavors:" },
+                { "type": "equation", "text": "P(νₐ→νᵦ) = sin²(2θ)sin²(1.27Δm²L/E)" },
+                { "type": "paragraph", "text": "Where θ is mixing angle, Δm² is mass difference squared, L is distance, E is energy" }
+              ]},
+              { "type": "depth-indicator", "depth": "advanced", "text": "The Seesaw Mechanism" },
+              { "type": "paragraph", "text": "Why are neutrinos so light? The seesaw mechanism suggests extremely heavy 'sterile' neutrinos (10¹⁵ GeV) balance the scales, making observed neutrinos ultra-light (< 1 eV)." }
+            ]
+          }
+        }
+      ]
+    },
+    
+    {
+      "id": "forces",
+      "nav_title": "Forces & Bosons",
+      "number": "5",
+      "title": "Forces and Their Messengers",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "Forces = Particle Exchange",
+          "content": [
+            "Imagine two ice skaters throwing a heavy ball back and forth - they push apart. That's how forces work at the quantum level!",
+            "Particles exchange force carriers (bosons) to create attractive or repulsive forces.",
+            "The range of a force depends on the mass of its carrier: massless carriers (photon, gluon) give infinite range, massive carriers (W, Z) give short range."
+          ],
+          "has_canvas": true,
+          "canvas_id": "forceExchange",
+          "canvas_type": "force_animation",
+          "interactive_buttons": ["Electromagnetic", "Strong Force", "Weak Force"],
+          "has_table": true,
+          "table_data": {
+            "headers": ["Force", "Boson", "Mass", "Range", "Relative Strength", "Role"],
+            "rows": [
+              ["Strong", "Gluon (g)", "0", "10⁻¹⁵ m", "1", "Binds quarks, holds nuclei"],
+              ["Electromagnetic", "Photon (γ)", "0", "Infinite", "1/137", "Chemistry, light, electricity"],
+              ["Weak", "W±, Z⁰", "80-91 GeV", "10⁻¹⁸ m", "10⁻⁶", "Radioactive decay, fusion"],
+              ["Gravity", "Graviton?", "0", "Infinite", "10⁻³⁸", "Shapes universe (not in SM)"]
+            ]
+          },
+          "expandable": {
+            "button_text": "Virtual Particles & Quantum Field Theory",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Virtual Particles" },
+              { "type": "paragraph", "text": "Force carriers can be 'virtual' - they exist for such short times that they can violate energy conservation temporarily." },
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "Heisenberg uncertainty principle allows this:" },
+                { "type": "equation", "text": "ΔE·Δt ≥ ℏ/2" },
+                { "type": "paragraph", "text": "A virtual particle with energy ΔE can exist for time Δt ≈ ℏ/(2ΔE)" }
+              ]},
+              { "type": "depth-indicator", "depth": "advanced", "text": "Gauge Theory & Symmetries" },
+              { "type": "paragraph", "text": "Each force corresponds to a gauge symmetry - a mathematical transformation that leaves physics unchanged:" },
+              { "type": "list", "items": [
+                "<strong>Electromagnetic:</strong> U(1) symmetry → 1 Photon",
+                "<strong>Weak:</strong> SU(2) symmetry → 3 bosons (W⁺, W⁻, Z⁰)",
+                "<strong>Strong:</strong> SU(3) symmetry → 8 Gluons",
+                "<strong>Electroweak unification:</strong> SU(2)×U(1) → Unified at high energy"
+              ]},
+              { "type": "equation-box", "content": [
+                { "type": "depth-indicator", "depth": "expert", "text": "Yang-Mills Lagrangian" },
+                { "type": "equation", "text": "ℒ_YM = -¼Tr(FμνF^μν)" },
+                { "type": "paragraph", "text": "Where Fμν = ∂μAν - ∂νAμ + ig[Aμ,Aν] is the field strength tensor" }
+              ]}
+            ]
+          }
+        }
+      ]
+    },
+    
+    {
+      "id": "higgs",
+      "nav_title": "Higgs Mechanism",
+      "number": "6",
+      "title": "The Higgs Mechanism",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "Why Do Particles Have Mass?",
+          "content": [
+            "Imagine a celebrity walking through a crowded room - fans cluster around, slowing them down. The Higgs field fills all of space, and particles that interact with it gain mass!",
+            "The Higgs field has a non-zero value everywhere in space (vacuum expectation value), unlike other fields.",
+            "Different particles couple to the Higgs field with different strengths, giving them different masses."
+          ],
+          "has_canvas": true,
+          "canvas_id": "higgsField",
+          "canvas_type": "higgs_field_sim",
+          "interactive_elements": ["Photon (no mass)", "Electron (small mass)", "W boson (large mass)", "Top quark (huge mass)"],
+          "expandable": {
+            "button_text": "The Mexican Hat & Symmetry Breaking",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Spontaneous Symmetry Breaking" },
+              { "type": "paragraph", "text": "The Higgs field has a unique potential shaped like a Mexican hat (wine bottle bottom). The field 'rolls' to a minimum value, breaking the symmetry of the laws of physics." },
+              { "type": "canvas", "id": "mexicanHat", "type": "potential_3d" },
+              { "type": "depth-indicator", "depth": "advanced", "text": "The Mathematics" },
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "Higgs potential (Mexican hat):" },
+                { "type": "equation", "text": "V(φ) = -μ²|φ|² + λ|φ|⁴" },
+                { "type": "paragraph", "text": "Minimum at |φ| = v = √(μ²/2λ) ≈ 246 GeV" },
+                { "type": "paragraph", "text": "This vacuum expectation value (vev) sets the electroweak scale!" },
+                { "type": "paragraph", "text": "Particle masses: m = gv/√2, where g is the Yukawa coupling" }
+              ]},
+              { "type": "depth-indicator", "depth": "expert", "text": "Goldstone Bosons & Gauge Fixing" },
+              { "type": "paragraph", "text": "Breaking a continuous symmetry creates massless Goldstone bosons. In the Higgs mechanism, these are 'eaten' by the W and Z bosons, giving them mass and a longitudinal polarization." }
+            ]
+          }
+        },
+        {
+          "type": "cern-reference",
+          "title": "The 2012 Discovery at CERN",
+          "content": [
+            "On July 4, 2012, CERN announced the discovery of the Higgs boson - the quantum excitation of the Higgs field.",
+            "It took: 10,000 scientists, 50 years of theory, 30 years of construction, and collisions at 99.999999% the speed of light!",
+            "<strong>Detection signatures:</strong>",
+            "• H → γγ (two photons) - Clean but rare",
+            "• H → ZZ → 4 leptons - 'Golden channel'",
+            "• H → WW → leptons + neutrinos",
+            "• H → bb̄ (bottom quarks) - Most common but hard to detect",
+            "The discovery confirmed the last missing piece of the Standard Model and earned François Englert and Peter Higgs the 2013 Nobel Prize."
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id": "quantum",
+      "nav_title": "Quantum Properties",
+      "number": "7",
+      "title": "Quantum Properties",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "Spin: Not Really Spinning!",
+          "content": [
+            "Quantum spin is like an internal compass needle that can only point in specific directions. It's intrinsic angular momentum - particles have it even when standing still!",
+            "Spin determines particle statistics: Fermions (half-integer spin) obey Pauli exclusion, Bosons (integer spin) can occupy the same state.",
+            "Spin is quantized: measured in units of ℏ/2 (spin-1/2, spin-1, etc.)"
+          ],
+          "has_canvas": true,
+          "canvas_id": "spinDemo",
+          "canvas_type": "spin_visualization",
+          "expandable": {
+            "button_text": "Quantum Numbers & Conservation Laws",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Conservation Laws" },
+              { "type": "table", "data": {
+                "headers": ["Quantity", "Conservation", "Associated Symmetry"],
+                "rows": [
+                  ["Energy-Momentum", "Always", "Time & Space translation"],
+                  ["Electric Charge", "Always", "U(1) gauge symmetry"],
+                  ["Baryon Number", "Always*", "Baryon number symmetry"],
+                  ["Lepton Number", "Usually**", "Lepton family symmetry"],
+                  ["Strangeness", "Strong/EM only", "Flavor symmetry"],
+                  ["Parity", "Strong/EM only", "Spatial inversion"],
+                  ["CP", "Usually***", "Charge-Parity symmetry"]
+                ]
+              }},
+              { "type": "paragraph", "text": "*Possibly violated by proton decay (not observed)\n**Violated by neutrino oscillations\n***Violated in weak interactions and B meson decays" },
+              { "type": "depth-indicator", "depth": "advanced", "text": "CPT Theorem" },
+              { "type": "paragraph", "text": "The deepest symmetry: physics is unchanged under combined Charge conjugation, Parity inversion, and Time reversal. Any Lorentz-invariant quantum field theory must be CPT symmetric." },
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "Spin angular momentum eigenvalues:" },
+                { "type": "equation", "text": "S² |s,m⟩ = ℏ²s(s+1) |s,m⟩" },
+                { "type": "equation", "text": "Sₖ |s,m⟩ = ℏm |s,m⟩" },
+                { "type": "paragraph", "text": "Where s is spin quantum number, m is magnetic quantum number (-s ≤ m ≤ s)" }
+              ]}
+            ]
+          }
+        },
+        {
+          "type": "mnemonic",
+          "title": "Quantum Number Rules",
+          "content": [
+            "<strong>Spin Statistics:</strong> \"Fermions are Antisocial\" (Pauli exclusion)",
+            "<strong>Bosons are Social:</strong> \"Photons Party Together\" (can pile up)",
+            "<strong>Conservation:</strong> \"BLESS\" - Baryon, Lepton, Energy, Strangeness, Spin (angular momentum)"
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id": "interactions",
+      "nav_title": "Interactions",
+      "number": "8",
+      "title": "How Particles Interact",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "Feynman Diagrams: The Comic Strips of Physics",
+          "content": [
+            "Richard Feynman invented these diagrams to visualize and calculate particle interactions. Time flows left to right, and each vertex represents an interaction point.",
+            "Every line and vertex has a mathematical meaning - these aren't just pictures, they're calculation tools!",
+            "Each diagram represents a quantum amplitude that must be squared and summed over all possibilities."
+          ],
+          "has_canvas": true,
+          "canvas_id": "feynmanDiagram",
+          "canvas_type": "feynman_builder",
+          "interactive_buttons": ["Beta Decay", "Electron Scattering", "Higgs Production", "Pair Annihilation"],
+          "expandable": {
+            "button_text": "Calculate Interaction Probabilities",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Feynman Rules" },
+              { "type": "paragraph", "text": "Each diagram element contributes a factor to the amplitude:" },
+              { "type": "list", "items": [
+                "<strong>Vertex:</strong> Coupling constant (e for EM, g for strong)",
+                "<strong>Internal line (propagator):</strong> 1/(q² - m²) for virtual particles",
+                "<strong>External line:</strong> Wave function for real particles",
+                "<strong>Loop:</strong> Integration over internal momentum"
+              ]},
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "Example - Electron-positron scattering:" },
+                { "type": "equation", "text": "M = e²/q² · ū(p₃)γμu(p₁) · v̄(p₂)γμv(p₄)" },
+                { "type": "paragraph", "text": "Cross section: σ = |M|²/(flux factor)" }
+              ]},
+              { "type": "depth-indicator", "depth": "advanced", "text": "Perturbation Theory" },
+              { "type": "paragraph", "text": "Total amplitude = Sum of all possible diagrams:" },
+              { "type": "equation", "text": "M = M₀ + M₁ + M₂ + ..." },
+              { "type": "paragraph", "text": "Each order adds more vertices. For QED, α ≈ 1/137 makes series converge." },
+              { "type": "paragraph", "text": "For QCD at low energy, αₛ ≈ 1, so perturbation theory fails (confinement regime)." }
+            ]
+          }
+        },
+        {
+          "type": "concept",
+          "title": "Decay Processes",
+          "content": [
+            "Particles decay through the weak force when energetically allowed. The lifetime depends on the coupling strength and available phase space.",
+            "Common decay modes:",
+            "• Beta decay: n → p + e⁻ + ν̄ₑ (neutron decay)",
+            "• Muon decay: μ⁻ → e⁻ + ν̄ₑ + νμ",
+            "• Pion decay: π⁺ → μ⁺ + νμ"
+          ],
+          "has_table": true,
+          "table_data": {
+            "headers": ["Particle", "Lifetime", "Main Decay", "Force"],
+            "rows": [
+              ["Neutron", "880 s", "p + e⁻ + ν̄ₑ", "Weak"],
+              ["Muon", "2.2 μs", "e⁻ + ν̄ₑ + νμ", "Weak"],
+              ["Tau", "290 fs", "Various", "Weak"],
+              ["Charged Pion", "26 ns", "μ + ν", "Weak"],
+              ["Neutral Pion", "8.5×10⁻¹⁷ s", "γγ", "Electromagnetic"],
+              ["Top Quark", "5×10⁻²⁵ s", "W + b", "Weak"]
+            ]
+          }
+        }
+      ]
+    },
+    
+    {
+      "id": "detection",
+      "nav_title": "Detection",
+      "number": "9",
+      "title": "Detecting the Invisible",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "How to 'See' Subatomic Particles",
+          "content": [
+            "Particles leave tracks like planes leave contrails. Different particles create unique signatures in detectors based on how they interact with matter.",
+            "Modern detectors are like 3D cameras the size of buildings, taking 40 million pictures per second!",
+            "Each particle type has a characteristic signature based on which detector layers it penetrates."
+          ],
+          "has_canvas": true,
+          "canvas_id": "detectorView",
+          "canvas_type": "detector_cross_section",
+          "interactive_elements": ["Show electron track", "Show muon track", "Show hadron shower", "Show missing energy"],
+          "expandable": {
+            "button_text": "Detector Technology Deep Dive",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Detector Layers (Inside Out)" },
+              { "type": "list", "items": [
+                "<strong>1. Vertex Detector:</strong> Silicon pixels, 10μm resolution, finds decay vertices",
+                "<strong>2. Tracker:</strong> Silicon strips, measures momentum from track curvature in magnetic field",
+                "<strong>3. ECAL (Electromagnetic Calorimeter):</strong> Lead tungstate crystals, stops photons/electrons",
+                "<strong>4. HCAL (Hadronic Calorimeter):</strong> Brass/scintillator sandwich, stops hadrons",
+                "<strong>5. Magnet:</strong> Superconducting solenoid, 4 Tesla field for momentum measurement",
+                "<strong>6. Muon Chambers:</strong> Gas detectors, only muons penetrate this far"
+              ]},
+              { "type": "table", "data": {
+                "headers": ["Particle", "Tracker", "ECAL", "HCAL", "Muon", "Signature"],
+                "rows": [
+                  ["Electron", "✓ track", "✓ shower", "✗", "✗", "Track + EM shower"],
+                  ["Photon", "✗", "✓ shower", "✗", "✗", "EM shower only"],
+                  ["Charged Hadron", "✓ track", "small", "✓ shower", "✗", "Track + had shower"],
+                  ["Neutral Hadron", "✗", "small", "✓ shower", "✗", "Had shower only"],
+                  ["Muon", "✓ track", "min ion", "min ion", "✓ track", "Penetrating track"],
+                  ["Neutrino", "✗", "✗", "✗", "✗", "Missing energy"]
+                ]
+              }},
+              { "type": "depth-indicator", "depth": "advanced", "text": "Particle Identification Techniques" },
+              { "type": "paragraph", "text": "• dE/dx: Energy loss rate identifies particle type" },
+              { "type": "paragraph", "text": "• Cherenkov radiation: Measures velocity for particle ID" },
+              { "type": "paragraph", "text": "• Transition radiation: Distinguishes electrons from pions" },
+              { "type": "paragraph", "text": "• Time-of-flight: Measures mass from velocity" }
+            ]
+          }
+        },
+        {
+          "type": "cern-reference",
+          "title": "The LHC: Humanity's Most Complex Machine",
+          "content": [
+            "<strong>Scale & Performance:</strong>",
+            "• Circumference: 27 km underground ring",
+            "• Temperature: 1.9 K (-271.3°C) - colder than outer space!",
+            "• Vacuum: 10⁻¹³ atm - emptier than interplanetary space",
+            "• Collision rate: 600 million collisions/second",
+            "• Energy: 13.6 TeV (Run 3) - like mosquitoes with the energy of a fastball",
+            "• Data rate: 30 petabytes/year (30 million GB)",
+            "",
+            "<strong>The Four Main Detectors:</strong>",
+            "• <strong>ATLAS:</strong> A Toroidal LHC ApparatuS - 46m long, 7000 tons",
+            "• <strong>CMS:</strong> Compact Muon Solenoid - 'compact' but weighs 14,000 tons",
+            "• <strong>ALICE:</strong> Studies quark-gluon plasma from lead-ion collisions",
+            "• <strong>LHCb:</strong> Specializes in b-quark physics and matter-antimatter asymmetry",
+            "",
+            "<strong>Superconducting Magnets:</strong>",
+            "• 1,232 dipole magnets at 8.33 Tesla (200,000× Earth's field)",
+            "• Use 96 tons of superfluid helium",
+            "• Store energy equivalent to 400 tons of TNT when operational"
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id": "mathematics",
+      "nav_title": "Mathematics",
+      "number": "10",
+      "title": "Mathematical Foundation",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "The Equations That Rule the Universe",
+          "content": [
+            "These equations encode all known particle physics (except gravity). Each symbol tells a story about the fundamental nature of reality.",
+            "From Schrödinger's equation for atoms to the Standard Model Lagrangian, mathematics is the language of the quantum world."
+          ],
+          "equations": [
             {
-                "type": "concept",
-                "title": "The Standard Model: Nature's LEGO Set",
-                "content": ["All matter and forces (except gravity) arise from just 17 fundamental particles. Think of them as nature's LEGO blocks!"],
-                "has_particle_grid": true
+              "name": "1. Schrödinger Equation (Non-relativistic QM)",
+              "equation": "iℏ ∂Ψ/∂t = ĤΨ",
+              "description": "Describes how quantum states evolve in time"
             },
             {
-              "type": "mnemonic",
-              "title": "Memory Trick: Particle Categories",
-              "content": [
-                "<strong>Fermions</strong> (matter particles): \"Frankly, Every Real Material Is Obviously Numerous\"",
-                "<strong>Bosons</strong> (force carriers): \"Big Objects Send Out Notifications\""
-                ]
+              "name": "2. Dirac Equation (Relativistic electrons)",
+              "equation": "(iγ^μ∂_μ - m)ψ = 0",
+              "description": "Predicted antimatter! Combines QM with special relativity"
+            },
+            {
+              "name": "3. Klein-Gordon Equation (Scalar particles)",
+              "equation": "(□ + m²)φ = 0",
+              "description": "Describes spin-0 particles like the Higgs"
+            },
+            {
+              "name": "4. Yang-Mills Equation (Force fields)",
+              "equation": "D_μF^μν = J^ν",
+              "description": "Describes how force fields propagate and interact"
             }
-        ]
+          ],
+          "expandable": {
+            "button_text": "The Standard Model Lagrangian",
+            "content": [
+              { "type": "depth-indicator", "depth": "advanced", "text": "The Master Equation" },
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "The complete Standard Model Lagrangian:" },
+                { "type": "equation", "text": "ℒ_SM = ℒ_gauge + ℒ_fermion + ℒ_Higgs + ℒ_Yukawa" },
+                { "type": "paragraph", "text": "Expanded form:" },
+                { "type": "equation", "text": "ℒ = -¼F_μνF^μν + iψ̄γ^μD_μψ + ψ̄_iY_{ij}ψ_jφ + h.c. + |D_μφ|² - V(φ)" },
+                { "type": "paragraph", "text": "Terms represent:" },
+                { "type": "list", "items": [
+                  "F_μνF^μν: Gauge field kinetic energy (photons, W, Z, gluons)",
+                  "ψ̄γ^μD_μψ: Fermion kinetic energy and gauge interactions",
+                  "Y_{ij}ψ_jφ: Yukawa couplings (fermion masses)",
+                  "|D_μφ|²: Higgs kinetic energy",
+                  "V(φ): Higgs potential (symmetry breaking)"
+                ]}
+              ]},
+              { "type": "depth-indicator", "depth": "expert", "text": "Path Integral Formulation" },
+              { "type": "equation-box", "content": [
+                { "type": "paragraph", "text": "Feynman's approach: Sum over all possible histories!" },
+                { "type": "equation", "text": "⟨f|i⟩ = ∫ Dφ e^{iS[φ]/ℏ}" },
+                { "type": "paragraph", "text": "Where S[φ] = ∫d⁴x ℒ(φ) is the action" },
+                { "type": "paragraph", "text": "This integral includes all possible field configurations connecting initial and final states" }
+              ]},
+              { "type": "depth-indicator", "depth": "expert", "text": "Renormalization Group" },
+              { "type": "paragraph", "text": "Coupling constants 'run' with energy scale:" },
+              { "type": "equation", "text": "β(g) = μ ∂g/∂μ" },
+              { "type": "paragraph", "text": "QED: α increases with energy (asymptotic slavery)" },
+              { "type": "paragraph", "text": "QCD: α_s decreases with energy (asymptotic freedom - Nobel 2004)" }
+            ]
+          }
+        }
+      ]
+    },
+    
+    {
+      "id": "beyond",
+      "nav_title": "Beyond",
+      "number": "11",
+      "title": "Beyond the Standard Model",
+      "cards": [
+        {
+          "type": "concept",
+          "title": "The Universe's Unsolved Mysteries",
+          "content": [
+            "The Standard Model explains only 5% of the universe! Dark matter (27%) and dark energy (68%) remain complete mysteries.",
+            "Other puzzles: Why is there more matter than antimatter? Why is gravity so weak? Are there extra dimensions?",
+            "The next breakthrough in physics will likely come from solving one of these mysteries."
+          ],
+          "has_canvas": true,
+          "canvas_id": "universeComposition",
+          "canvas_type": "pie_chart_3d",
+          "expandable": {
+            "button_text": "Theoretical Frontiers & Future Physics",
+            "content": [
+              { "type": "depth-indicator", "depth": "intermediate", "text": "Major Open Questions" },
+              { "type": "list", "items": [
+                "<strong>Dark Matter:</strong> Invisible mass holding galaxies together. Candidates: WIMPs, axions, sterile neutrinos",
+                "<strong>Dark Energy:</strong> Mysterious force accelerating cosmic expansion. Related to cosmological constant?",
+                "<strong>Matter-Antimatter Asymmetry:</strong> Why did matter win? CP violation insufficient to explain",
+                "<strong>Hierarchy Problem:</strong> Why is gravity 10³² times weaker than the weak force?",
+                "<strong>Neutrino Masses:</strong> Why so tiny? Seesaw mechanism? Majorana nature?",
+                "<strong>Strong CP Problem:</strong> Why doesn't the strong force violate CP? Axions?",
+                "<strong>Quantum Gravity:</strong> How to unify QM with general relativity?"
+              ]},
+              { "type": "depth-indicator", "depth": "advanced", "text": "Leading Theories" },
+              { "type": "paragraph", "text": "<strong>Supersymmetry (SUSY):</strong>" },
+              { "type": "list", "items": [
+                "Every particle has a 'superpartner' with spin differing by 1/2",
+                "Solves hierarchy problem, provides dark matter candidate",
+                "Predicts: selectron, squark, gluino, neutralino, etc.",
+                "Not yet found at LHC - if it exists, it's broken at high energy"
+              ]},
+              { "type": "paragraph", "text": "<strong>String Theory:</strong>" },
+              { "type": "list", "items": [
+                "Particles are vibrating strings in 10 or 11 dimensions",
+                "Only theory that naturally includes gravity",
+                "Predicts 10⁵⁰⁰ possible universes (landscape problem)",
+                "Currently untestable - strings at Planck scale 10⁻³⁵ m"
+              ]},
+              { "type": "paragraph", "text": "<strong>Loop Quantum Gravity:</strong>" },
+              { "type": "list", "items": [
+                "Spacetime itself is quantized at Planck scale",
+                "Predicts discrete spectrum of areas and volumes",
+                "Background independent (unlike string theory)",
+                "May be testable through cosmic ray observations"
+              ]},
+              { "type": "paragraph", "text": "<strong>Extra Dimensions:</strong>" },
+              { "type": "list", "items": [
+                "Large extra dimensions could explain gravity's weakness",
+                "Particles confined to 3D 'brane', gravity leaks into bulk",
+                "Testable at LHC through missing energy, micro black holes",
+                "Kaluza-Klein towers of heavy particle copies"
+              ]}
+            ]
+          }
+        },
+        {
+          "type": "cern-reference",
+          "title": "The Future of Particle Physics",
+          "content": [
+            "<strong>Current & Near-Future Experiments:</strong>",
+            "• <strong>LHC High-Luminosity Upgrade (2029):</strong> 10× more data for precision studies",
+            "• <strong>DUNE (2028):</strong> Neutrino beam from Fermilab to South Dakota",
+            "• <strong>Belle II:</strong> Precision B-physics in Japan",
+            "• <strong>Muon g-2:</strong> Testing Standard Model predictions at Fermilab",
+            "",
+            "<strong>Proposed Future Colliders:</strong>",
+            "• <strong>FCC (Future Circular Collider):</strong> 100 km ring at CERN, 100 TeV collisions",
+            "• <strong>ILC (International Linear Collider):</strong> Precision Higgs factory",
+            "• <strong>CLIC:</strong> Compact linear collider, up to 3 TeV",
+            "• <strong>Muon Collider:</strong> Clean collisions, less synchrotron radiation",
+            "",
+            "<strong>Dark Matter Searches:</strong>",
+            "• <strong>Direct Detection:</strong> XENON, LUX-ZEPLIN, PandaX - underground detectors",
+            "• <strong>Indirect Detection:</strong> AMS-02 on ISS, Fermi telescope",
+            "• <strong>Collider Production:</strong> Looking for missing energy at LHC",
+            "",
+            "<strong>Quantum Computing for Physics:</strong>",
+            "Future quantum computers could simulate quantum field theories directly, solving problems impossible for classical computers!"
+          ]
+        },
+        {
+          "type": "mnemonic",
+          "title": "Remember the Mysteries: 'DANG HMS'",
+          "content": [
+            "<strong>D</strong>ark matter - What is 27% of the universe?",
+            "<strong>A</strong>symmetry - Why more matter than antimatter?",
+            "<strong>N</strong>eutrino masses - Why so tiny?",
+            "<strong>G</strong>ravity - Why so weak? How to quantize?",
+            "",
+            "<strong>H</strong>ierarchy problem - Natural mass scales?",
+            "<strong>M</strong>ultiverse? - Are we one of many?",
+            "<strong>S</strong>upersymmetry? - Beautiful but hidden?"
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id": "summary",
+      "nav_title": "Summary",
+      "number": "∞",
+      "title": "Your Learning Journey Complete!",
+      "cards": [
+        {
+          "type": "summary",
+          "title": "🎯 Quick Reference Card",
+          "content": [
+            "You've traveled from the vastness of the universe to its smallest constituents!",
+            "",
+            "<strong>The Standard Model at a Glance:</strong>",
+            "✅ <strong>6 Quarks:</strong> up, down, charm, strange, top, bottom",
+            "✅ <strong>6 Leptons:</strong> electron, muon, tau + their neutrinos",
+            "✅ <strong>5 Force Carriers:</strong> photon, W±, Z, 8 gluons, Higgs",
+            "✅ <strong>4 Fundamental Forces:</strong> strong, electromagnetic, weak, (gravity*)",
+            "",
+            "<strong>Key Principles:</strong>",
+            "• Everything is made of quantum fields",
+            "• Forces arise from symmetries (Noether's theorem)",
+            "• Mass comes from Higgs field interaction",
+            "• Antimatter is matter moving backward in time (Feynman)",
+            "• Virtual particles mediate forces",
+            "",
+            "<strong>Remember:</strong> Physics is not just equations - it's the poetry of reality!"
+          ]
+        },
+        {
+          "type": "resources",
+          "title": "Continue Your Journey",
+          "links": [
+            { "text": "CERN Homepage", "url": "https://home.cern", "description": "Latest from the Large Hadron Collider" },
+            { "text": "Symmetry Magazine", "url": "https://www.symmetrymagazine.org", "description": "Particle physics explained beautifully" },
+            { "text": "Quantum Diaries", "url": "https://www.quantumdiaries.org", "description": "Real physicists share their work" },
+            { "text": "Particle Data Group", "url": "https://pdg.lbl.gov", "description": "The ultimate reference for particle properties" },
+            { "text": "arXiv hep-ph", "url": "https://arxiv.org/list/hep-ph/recent", "description": "Latest research papers (advanced)" }
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  
+  "visualizations": {
+    "scale_zoom": {
+      "type": "interactive_zoom",
+      "description": "Scroll to zoom through 61 orders of magnitude",
+      "scales": [
+        { "size": 26, "label": "Observable Universe", "description": "93 billion light-years across" },
+        { "size": 21, "label": "Milky Way Galaxy", "description": "100,000 light-years across" },
+        { "size": 12, "label": "Solar System", "description": "Pluto's orbit ~80 AU" },
+        { "size": 6, "label": "Earth", "description": "12,742 km diameter" },
+        { "size": 0, "label": "Human", "description": "~2 meters tall" },
+        { "size": -3, "label": "Millimeter", "description": "Grain of sand" },
+        { "size": -6, "label": "Micrometer", "description": "Bacteria, red blood cell" },
+        { "size": -9, "label": "Nanometer", "description": "DNA width, small virus" },
+        { "size": -10, "label": "Angstrom", "description": "Hydrogen atom" },
+        { "size": -15, "label": "Femtometer", "description": "Proton radius" },
+        { "size": -18, "label": "Attometer", "description": "Quark interactions" },
+        { "size": -35, "label": "Planck Length", "description": "Quantum gravity scale" }
+      ]
+    },
+    "particle_collision": {
+      "type": "animation",
+      "description": "Simulated particle collision with tracks"
+    },
+    "atom_animation": {
+      "type": "orbital_model",
+      "description": "Electron orbitals around nucleus with quarks visible"
+    },
+    "quark_builder": {
+      "type": "interactive",
+      "description": "Build hadrons from quarks",
+      "combinations": {
+        "proton": { "quarks": ["up", "up", "down"], "charge": 1 },
+        "neutron": { "quarks": ["up", "down", "down"], "charge": 0 },
+        "pion_plus": { "quarks": ["up", "antidown"], "charge": 1 },
+        "kaon": { "quarks": ["strange", "antiup"], "charge": -1 }
+      }
+    },
+    "force_animation": {
+      "type": "particle_exchange",
+      "forces": ["electromagnetic", "strong", "weak"]
+    },
+    "higgs_field_sim": {
+      "type": "field_interaction",
+      "description": "Shows how particles gain mass moving through Higgs field"
+    },
+    "detector_cross_section": {
+      "type": "layered_view",
+      "layers": ["vertex", "tracker", "ecal", "hcal", "magnet", "muon"]
+    },
+    "feynman_builder": {
+      "type": "diagram_creator",
+      "processes": ["beta_decay", "electron_scattering", "higgs_production", "pair_annihilation"]
+    }
+  },
+  
+  "config": {
+    "enable_animations": true,
+    "show_equations": true,
+    "difficulty_levels": ["beginner", "intermediate", "advanced", "expert"],
+    "default_level": "beginner",
+    "theme": "dark_physics",
+    "particle_colors": {
+      "quark": "#ff006e",
+      "lepton": "#3a86ff",
+      "boson": "#06ffa5"
+    }
+  }
 }

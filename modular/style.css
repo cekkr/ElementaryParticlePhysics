@@ -386,3 +386,258 @@ body {
     .hero h1 { font-size: 2.5rem; }
     .section-title { font-size: 1.8rem; }
 }
+
+/*
+    Additional
+*/
+
+/* Summary and Resource Cards */
+.summary-card {
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(255, 0, 110, 0.1));
+    border: 2px solid rgba(100, 255, 218, 0.3);
+}
+
+.resources-card {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(6, 255, 165, 0.1));
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+/* Interactive Elements */
+.interactive-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.particle-example {
+    padding: 0.5rem 1rem;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.particle-example:hover {
+    background: rgba(0, 212, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Resource Links */
+.resource-links {
+    margin-top: 1.5rem;
+}
+
+.resource-link {
+    padding: 1rem;
+    background: rgba(30, 40, 70, 0.5);
+    border-left: 3px solid var(--primary);
+    border-radius: 8px;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+    background: rgba(30, 40, 70, 0.8);
+    transform: translateX(5px);
+}
+
+.resource-link a {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.resource-link p {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+/* Table Enhancements */
+table {
+    font-size: 0.95rem;
+}
+
+table th {
+    font-weight: 600;
+    background: rgba(0, 212, 255, 0.1);
+}
+
+table td {
+    transition: background 0.3s ease;
+}
+
+table tr:hover td {
+    background: rgba(0, 212, 255, 0.05);
+}
+
+/* Canvas Animations */
+@keyframes modalSlide {
+    from { 
+        transform: translate(-50%, -60%); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translate(-50%, -50%); 
+        opacity: 1; 
+    }
+}
+
+/* Particle Popup Enhancement */
+#particlePopup {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#particlePopup::-webkit-scrollbar {
+    width: 8px;
+}
+
+#particlePopup::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+#particlePopup::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* Hero Animation Container */
+#heroAnimation {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Multiple Canvas Support */
+.demo-canvas[data-type="scale_zoom"] {
+    cursor: grab;
+}
+
+.demo-canvas[data-type="scale_zoom"]:active {
+    cursor: grabbing;
+}
+
+/* Equation Box Variations */
+.equation-box h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.equation-box .equation {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+/* Depth Indicator Animations */
+.depth-indicator {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Expert Level Styling */
+.depth-expert {
+    background: rgba(147, 51, 234, 0.2);
+    color: #9333ea;
+    border-left: 3px solid #9333ea;
+    padding-left: 0.5rem;
+}
+
+/* Print Styles */
+@media print {
+    .nav-sidebar,
+    .progress-bar,
+    .expand-btn,
+    .scroll-indicator {
+        display: none !important;
+    }
+    
+    .expandable {
+        max-height: none !important;
+        opacity: 1 !important;
+    }
+    
+    .content-section {
+        page-break-inside: avoid;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .concept-card,
+    .mnemonic,
+    .cern-reference {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        color: black !important;
+    }
+}
+
+/* Loading States */
+.canvas-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.canvas-loading::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 212, 255, 0.3);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Canvas Sizes */
+@media (max-width: 768px) {
+    .demo-canvas {
+        height: 300px;
+    }
+    
+    .particle-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .button-group .expand-btn {
+        width: 100%;
+    }
+}
